@@ -1,6 +1,7 @@
 package com.example.contactrecview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         list=db.getAllContacts();
         recyclerView=findViewById(R.id.recyclerview_id);
         recycler_view_adapter=new RecyclerViewAdapter(this,list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
         recyclerView.setAdapter(recycler_view_adapter);
     }
 }
